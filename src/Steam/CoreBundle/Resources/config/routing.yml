@@ -1,0 +1,7 @@
+steam_core_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SteamCoreBundle:Default:index }
+    
+steam_core_test:
+    pattern:  /calc/test
+    defaults: { _controller: SteamCoreBundle:Default:test }

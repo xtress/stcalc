@@ -1,0 +1,7 @@
+parameters:
+#    steam_core.example.class: Steam\CoreBundle\Example
+
+services:
+#    steam_core.example:
+#        class: %steam_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

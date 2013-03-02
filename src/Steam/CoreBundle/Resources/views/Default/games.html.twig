@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-bordered">
+        
+        <thead>
+            
+            <th></th>
+            <th>
+                {%trans%}CB_STEAM_GAME_NAME{%endtrans%}
+            </th>
+            <th>
+                Store link
+            </th>
+            <th>
+                Current price ({{app.session.get('store')}} store)
+            </th>
+            
+        </thead>
+        
+        <tbody>
+            
+            {% if games is defined and games != null %}
+                
+                {% for game in games %}
+
+                    <tr>
+
+                        <td>
+                            <img src="{{ game.logo }}" />
+                        </td>
+
+                        <td>
+                            {{ game.name }}
+                        </td>
+
+                        <td>
+                            <a href="{{ game.storeLink }}">
+                                Store link
+                            </a>
+                        </td>
+
+                        <td>
+                            {% if game.price is defined and game.price != null %}
+                                
+                                {{ game.price | raw }}
+                                
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+                
+            {% endif %}
+            
+        </tbody>
+        
+    </table>
+    
+    {{ price }}
+
+{% endblock body %}
